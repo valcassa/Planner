@@ -23,9 +23,10 @@ namespace Planner
             }
         }
 
-        internal static void UpdateImpegno()
-        {
+        internal static void UpdateImpegno() {
+            
             List<Impegno> impegno = impegnoRepository.Fetch();
+
             int i = 1;
             foreach (var im in impegno)
             {
@@ -117,21 +118,17 @@ namespace Planner
             impegnoRepository.Update(impegno);
 
         }
-
-        internal static void GetByPriority()
+    
+               internal static void GetByPriority()
         {
-            _Importanza imp = InsertImpegno();
+            _Importanza imp = InsertImpegno;
             List<Impegno> impegni = impegnoRepository.GetByImportanza();
             foreach (var im in impegni)
                 Console.WriteLine(imp.Print());
         }
 
-        private static _Importanza InsertImpegno()
-        {
-            throw new NotImplementedException();
-        }
 
-        internal static void GetByComplete()
+              internal static void GetByComplete()
         {
             string impegniterminati;
 
@@ -149,7 +146,7 @@ namespace Planner
         }
 
 
-        private static DateTime ChiediData()
+              private static DateTime ChiediData()
         {
             {
                 DateTime dt;
@@ -162,14 +159,14 @@ namespace Planner
             }
         }
 
-        internal static void GetByDate()
+             internal static void GetByDate()
         {
             DateTime dt = ChiediData();
             List<Impegno> impegni = impegnoRepository.GetByDate(dt);
             Print(impegni);
         }
 
-        private static void Print(List<Impegno> impegni)
+             private static void Print(List<Impegno> impegni)
         {
             foreach (var impegno in impegni)
             {

@@ -51,6 +51,10 @@ namespace Planner
             return impegni;
         }
 
+        internal void Delete(List<Impegno> impegno)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(Impegno impegno)
         {
@@ -79,9 +83,8 @@ namespace Planner
 
                  }
             }
-       }
-
-    public void Insert(Impegno impegno)
+       
+        public void Insert(Impegno impegno)
     {
 
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -105,6 +108,12 @@ namespace Planner
             command.ExecuteNonQuery();
         }
     }
+
+        internal void Update(List<Impegno> impegno)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Impegno impegno)
         {
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -152,11 +161,6 @@ namespace Planner
                 }
             }
             return impegni;
-        }
-
-        internal List<Impegno> GetByImportanza()
-        {
-            throw new NotImplementedException();
         }
 
         internal List<Impegno> GetByComplete()

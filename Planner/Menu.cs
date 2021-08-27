@@ -52,7 +52,7 @@ namespace Planner
                     DealManager.DeleteImpegno();
                     break;
                 case "4":
-                    DealManager.InsertImpegno();
+                    DealManager.InsertImpegno;
                     break;
                 case "5":
                     DealManager.GetByDate();
